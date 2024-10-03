@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "one" {
   ami           = "ami-08718895af4dfa033"
   instance_type = "t2.micro"
-  key-name      = "terraformkey"
+  key_name      = "terraformkey"
   vpc_security_group_ids = ["sg-02b20a5b329680509"]
   tags = {
     Name = "shakir01"
