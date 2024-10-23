@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
   key_name      = "Terraform"
   vpc_security_group_ids = ["sg-0c7484c06d8541775"]
   tags = {
-    Name = "${var.instance_name}-${count.index}"
+    Name = var.instance_name
   }
 }
 variable "instance_name" {
