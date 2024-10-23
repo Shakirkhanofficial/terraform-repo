@@ -3,11 +3,15 @@ provider "aws" {
 }
 
 resource "aws_instance" "one" {
-  ami           = "ami-078264b8ba71bc45e"
+  count = 4
+  ami = "ami-078264b8ba71bc45e"
   instance_type = "t2.micro"
-  key_name      = "terraformkey"
-  vpc_security_group_ids = ["sg-02b20a5b329680509"]
+  key_name      = "Terraform"
+  vpc_security_group_ids = ["sg-0c7484c06d8541775"]
   tags = {
-    Name = "shakir01"
+    Name = var.instance_name["default"]
   }
+}
+variable "instance_name" {
+default = ["jenkins","nexus","tomcat1","tomcat2"]
 }
