@@ -6,12 +6,12 @@ resource "aws_instance" "one" {
   count = 4
   ami = "ami-0e0e417dfa2028266"
   instance_type = "t2.medium"
-  key_name      = "projectbydevops"
+  key_name      = "devopsproject"
   vpc_security_group_ids = ["sg-0c7484c06d8541775"]
   tags = {
     Name = var.instance_name[count.index]
   }
 }
 variable "instance_name" {
-default = ["jenkins", "nexus", "tomcat1", "grafana"]
+default = ["jenkins", "nexus", "tomcat", "grafana"]
 }
