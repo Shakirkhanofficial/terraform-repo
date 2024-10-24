@@ -13,5 +13,5 @@ resource "aws_instance" "one" {
   }
 }
 variable "instance_name" {
-default = ["jenkins", "nexus", "tomcat1", "tomcat2"]
+default = ["jenkins", "nexus", "tomcat1", "grafana"]
 }
