@@ -6,7 +6,7 @@ resource "aws_instance" "one" {
   count = 4
   ami = "ami-0ddc798b3f1a5117e "
   instance_type = "t2.micro"
-  key_name      = "DevopsProject"
+  key_name      = "keypair"
   vpc_security_group_ids = ["sg-0970e3aea4b78ba88"]
   tags = {
     Name = var.instance_name[count.index]
